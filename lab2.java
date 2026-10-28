@@ -1,4 +1,4 @@
-public class Student {  
+public class lab2{  
     int id;
     String name;
     String course;
