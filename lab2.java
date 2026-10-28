@@ -1,4 +1,6 @@
-public class lab2{  
+import java.util.Scanner;
+
+public class Student {  
     int id;
     String name;
     String course;
@@ -10,28 +12,25 @@ public class lab2{
         this.gen=gen;
     }
     public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int id;
+        String name,course;
+        char gen;
         Student[] studentArray=new Student[21];
-        studentArray[0]=new Student(64220, "Upasana", "MCA", 'f');
-        studentArray[1]=new Student(64274, "Anushia", "MCA", 'f');
-        studentArray[2]=new Student(64247, "Kasish", "MCA", 'f');
-        studentArray[3]=new Student(64248, "Amit", "MCA", 'm');
-        studentArray[4]=new Student(64231, "Raghav", "MCA", 'm');
-        studentArray[5]=new Student(64228, "Siya", "MCA", 'f');
-        studentArray[6]=new Student(64243, "Divya", "MCA", 'f');
-        studentArray[7]=new Student(64217, "Kavya", "MCA", 'f');
-        studentArray[8]=new Student(64147, "Chhavi", "MCA", 'f');
-        studentArray[9]=new Student(64207, "Akansha", "MCA", 'f');
-        studentArray[10]=new Student(64257, "Isha", "MCA", 'f');
-        studentArray[11]=new Student(64937, "Nandita", "MCA", 'f');
-        studentArray[12]=new Student(64447, "Yash", "MCA", 'm');
-        studentArray[13]=new Student(64711, "Bhavesh", "MCA", 'm');
-        studentArray[14]=new Student(64107, "Yogesh", "MCA", 'm');
-        studentArray[15]=new Student(64295, "Naman", "MBA", 'm');
-        studentArray[16]=new Student(64243, "Harsh", "MCA", 'm');
-        studentArray[17]=new Student(64277, "Krishna", "MBA", 'm');
-        studentArray[18]=new Student(64242, "Kartik", "MCA", 'm');
-        studentArray[19]=new Student(64211, "Shivam", "MBA", 'm');
-        studentArray[20]=new Student(64227, "Ravi", "MBA", 'm');
+        System.out.println("Enter Students detail");
+        for(int i=0;i<21;i++){
+            System.out.println("Id: ");
+            id=sc.nextInt();
+            sc.nextLine();
+            System.out.println("Name: ");
+            name=sc.nextLine();
+            System.out.println("Course: ");
+            course=sc.nextLine();
+            System.out.println("Gender: ");
+            gen=sc.next().charAt(0);
+            studentArray[i]=new Student(id, name, course, gen);
+        }
+        sc.close();
         room_alloc(studentArray);
     }
 
