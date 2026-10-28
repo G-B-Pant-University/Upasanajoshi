@@ -16,9 +16,10 @@ public class Student {
         int id;
         String name,course;
         char gen;
-        Student[] studentArray=new Student[21];
+        int total_student=5;
+        Student[] studentArray=new Student[total_student];
         System.out.println("Enter Students detail");
-        for(int i=0;i<21;i++){
+        for(int i=0;i<total_student;i++){
             System.out.println("Id: ");
             id=sc.nextInt();
             sc.nextLine();
@@ -28,13 +29,15 @@ public class Student {
             course=sc.nextLine();
             System.out.println("Gender: ");
             gen=sc.next().charAt(0);
+
             studentArray[i]=new Student(id, name, course, gen);
+
         }
         sc.close();
-        room_alloc(studentArray);
+        room_alloc(studentArray,total_student);
     }
 
-    public static void room_alloc(Student[] studentArray){
+    public static void room_alloc(Student[] studentArray, int total_student){
         int total_female=0;
         int total_male=0;
         for (Student s : studentArray) {
@@ -43,7 +46,7 @@ public class Student {
                 total_female++;
             }
         }
-        total_male=21-total_female;
+        total_male=total_student-total_female;
         int f_rooms=total_female/2;//total no. of rooms for female
         int m_rooms=total_male/2;//total no. of rooms for male
         int u=0,v=0,j=0,k=0;//for 2D array traversing
@@ -83,7 +86,7 @@ for (Student[] row : femaleroom) {
     System.out.print("Room no. "+ i);
     for (Student student : row) {
         if (student != null) {
-            System.out.print(" "+ student.name + " ");
+            System.out.print(" ["+ student.name + "] ");
         }
     }
     i++;
@@ -96,7 +99,7 @@ for (Student[] row : maleroom) {
     System.out.print("Room no. "+ i);
     for (Student student : row) {
         if (student != null) {
-            System.out.print(" "+student.name + " ");
+            System.out.print(" ["+student.name + "] ");
         }
     }
     i++;
