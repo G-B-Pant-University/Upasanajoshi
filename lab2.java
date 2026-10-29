@@ -16,7 +16,7 @@ public class Student {
         int id;
         String name,course;
         char gen;
-        int total_student=5;
+        int total_student=21;
         Student[] studentArray=new Student[total_student];
         System.out.println("Enter Students detail");
         for(int i=0;i<total_student;i++){
