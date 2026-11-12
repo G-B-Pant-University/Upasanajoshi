@@ -1,1 +1,1 @@
-This repository consists of Java programs done in MCA-626 course lab
+This repository consists of Java programs completed in MCA-626 course lab
